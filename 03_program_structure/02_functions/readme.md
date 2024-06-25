@@ -10,6 +10,8 @@ For example, in a browser environment, the binding `prompt` holds a function tha
 prompt("Enter passcode");
 ```
 
+<img src="./images/prompt.PNG" alt="Prompt Functions" width="50%" >
+</br>
 Executing a function is called invoking, calling, or applying it. You can call a function by putting parentheses after an expression that produces a function value. Usually, you’ll directly use the name of the binding that holds the function. The values between the parentheses are given to the program inside the function. 
 
 In the example, the `prompt` function uses the string that we give it as the text to show in the dialog box. Values given to functions are called arguments. Different functions might need a different number or different types of arguments.
