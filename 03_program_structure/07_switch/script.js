@@ -1,29 +1,34 @@
-for (let number = 0; number <= 12; number = number + 2) {
-  console.log(number); // Print the current value of number
+function actionRainy() {
+  console.log("Remember to bring an umbrella.");
 }
-// → 0
-// → 2
-// … etcetera
 
-
-
-let result = 1;
-for (let counter = 0; counter < 10; counter = counter + 1) {
-  result = result * 2; // Multiply result by 2 in each iteration
+function actionSunny() {
+  console.log("Dress lightly.");
 }
-console.log(result); // Print the final result
-// → 1024
 
-
-for (let current = 20; ; current = current + 1) {
-  if (current % 7 == 0) {
-    console.log(current); // Print the first number >= 20 that is divisible by 7
-    break; // Exit the loop
-  }
+function actionCloudy() {
+  console.log("Go outside.");
 }
-// → 21
 
+function defaultAction() {
+  console.log("Unknown weather type!");
+}
 
-for (let number = 0; number <= 12; number += 2) {
-  console.log(number); // Print the current value of number
+// Prompt the user for the weather
+let weather = prompt("What is the weather like?");
+
+// Dispatch using switch
+switch (weather) {
+  case "rainy":
+    actionRainy();
+    break;
+  case "sunny":
+    actionSunny();
+    // No break statement here, so it falls through to the next case
+  case "cloudy":
+    actionCloudy();
+    break;
+  default:
+    defaultAction();
+    break;
 }
