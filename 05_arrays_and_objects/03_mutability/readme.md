@@ -126,3 +126,62 @@ addEntry(["weekend", "cycling", "break", "peanuts", "beer"], true);
 2. The second entry logs the events "work", "ice cream", "cauliflower", "lasagna", "touched tree", and "brushed teeth" and also indicates that Jacques did not turn into a squirrel (`false`).
 3. The third entry logs the events "weekend", "cycling", "break", "peanuts", and "beer" and indicates that Jacques did turn into a squirrel (`true`).
 
+
+## Further Array Methods
+
+### push and pop
+The `push` method adds elements to the end of an array, while the `pop` method removes the last element.
+
+### unshift and shift
+The `unshift` method adds elements to the start of an array, while the `shift` method removes the first element.
+
+#### Example
+```javascript
+let todoList = [];
+function remember(task) {
+  todoList.push(task);
+}
+function getTask() {
+  return todoList.shift();
+}
+function rememberUrgently(task) {
+  todoList.unshift(task);
+}
+```
+
+### indexOf and lastIndexOf
+The `indexOf` method searches for a value from the start of an array, while `lastIndexOf` searches from the end.
+
+#### Example
+```javascript
+console.log([1, 2, 3, 2, 1].indexOf(2));
+// → 1
+console.log([1, 2, 3, 2, 1].lastIndexOf(2));
+// → 3
+```
+
+### slice
+The `slice` method returns a new array containing elements between the specified start and end indices.
+
+#### Example
+```javascript
+console.log([0, 1, 2, 3, 4].slice(2, 4));
+// → [2, 3]
+console.log([0, 1, 2, 3, 4].slice(2));
+// → [2, 3, 4]
+```
+
+### concat
+The `concat` method combines arrays to create a new array.
+
+#### Example
+```javascript
+function remove(array, index) {
+  return array.slice(0, index).concat(array.slice(index + 1));
+}
+
+console.log(remove(["a", "b", "c", "d", "e"], 2));
+// → ["a", "b", "d", "e"]
+```
+
+This README format comprehensively covers array loops, data analysis, and useful array methods in JavaScript. If you need further adjustments or additional details, feel free to let me know!
