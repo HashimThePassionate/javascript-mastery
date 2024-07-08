@@ -28,7 +28,7 @@ console.log(object3.value); // → 10 (object3 references a different object, so
 
 const score = {visitors: 0, home: 0};
 score.visitors = 1; // This is allowed
-score = {visitors: 1, home: 1}; // This isn't allowed
+// score = {visitors: 1, home: 1}; // This isn't allowed
 
 
 // let object1 = {value: 10};

@@ -84,3 +84,45 @@ let object1 = {value: 10};
 let object2 = {value: 10};
 console.log(object1 == object2); // → false
 ```
+
+## Jacques' Journal
+
+### Setting Up the Journal
+Jacques keeps a journal to track events and his transformations into a squirrel.
+
+#### Setting Up the Journal
+First, we create an empty array called `journal` to store the entries.
+
+```javascript
+let journal = [];
+```
+
+#### Adding Entries to the Journal
+To add entries to the journal, we define a function called `addEntry`. This function takes two parameters:
+1. `events` - an array of strings representing the activities of the day.
+2. `squirrel` - a Boolean indicating whether Jacques turned into a squirrel.
+
+The function creates an object with these two properties and pushes it into the `journal` array.
+
+```javascript
+function addEntry(events, squirrel) {
+  journal.push({ events, squirrel });
+}
+```
+
+This function uses a shorthand notation in the object literal where `{ events, squirrel }` is equivalent to `{ events: events, squirrel: squirrel }`.
+
+#### Adding Example Entries
+We can now use the `addEntry` function to add some entries to the journal.
+
+```javascript
+addEntry(["work", "touched tree", "pizza", "running", "television"], false);
+addEntry(["work", "ice cream", "cauliflower", "lasagna", "touched tree", "brushed teeth"], false);
+addEntry(["weekend", "cycling", "break", "peanuts", "beer"], true);
+```
+
+### Explanation of Example Entries
+1. The first entry logs the events "work", "touched tree", "pizza", "running", and "television" and indicates that Jacques did not turn into a squirrel (`false`).
+2. The second entry logs the events "work", "ice cream", "cauliflower", "lasagna", "touched tree", and "brushed teeth" and also indicates that Jacques did not turn into a squirrel (`false`).
+3. The third entry logs the events "weekend", "cycling", "break", "peanuts", and "beer" and indicates that Jacques did turn into a squirrel (`true`).
+
