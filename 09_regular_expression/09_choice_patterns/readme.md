@@ -11,7 +11,7 @@ When working with **regular expressions** (regex) in JavaScript, you often need 
 - **`pattern1|pattern2`** matches `pattern1` **or** `pattern2`.
 - **`(pattern1|pattern2|pattern3)`** matches `pattern1`, `pattern2`, **or** `pattern3`.
 
-## Real-World Example: Counting Animals on a Farm 🐷🐄🐔
+## Real-World Example: Counting Animals on a Farm 🐷🐄🐔 
 
 Suppose you want to find out if a text contains a **number** followed by the words **pig**, **cow**, or **chicken**, including their plural forms (**pigs**, **cows**, **chickens**). Instead of writing three separate regex patterns, you can use a **choice pattern** to combine them into one!
 
