@@ -2,6 +2,43 @@
 
 Regular expressions are a powerful tool for working with patterns in strings. In JavaScript, regular expressions are represented as objects that can be created in two ways: using the `RegExp` constructor or by writing a regular expression literal. Understanding how to create and test regular expressions is fundamental to effectively using them.
 
+## Regex Basics
+
+| **Regex**           | **Explanation**                                                                                          |
+|---------------------|----------------------------------------------------------------------------------------------------------|
+| **`/abc/`**         | Matches the **exact sequence** of characters `"abc"` in the text.                                         |
+| **`/[abc]/`**       | Matches **any one character** from the set `{a, b, c}`.                                                   |
+| **`/[^abc]/`**      | Matches **any character** that is **not** in the set `{a, b, c}`.                                         |
+| **`/[0-9]/`**       | Matches **any digit** from `0` to `9`.                                                                    |
+| **`/x+/`**          | Matches **one or more** occurrences of the character or pattern `x`.                                      |
+| **`/x+?/`**         | Matches **one or more**, but in a **non-greedy** way, meaning as few matches as possible of `x`.          |
+| **`/x*/`**          | Matches **zero or more** occurrences of the character or pattern `x`.                                     |
+| **`/x?/`**          | Matches **zero or one** occurrence of the character or pattern `x`.                                       |
+| **`/x{2,4}/`**      | Matches **between 2 and 4 occurrences** of the character or pattern `x`.                                  |
+| **`/(abc)/`**       | Matches the **sequence "abc"** and **captures** it as a group for referencing or back-referencing.        |
+| **`/a|b|c/`**       | Matches **any one** of the patterns `a`, `b`, or `c`.                                                     |
+| **`/\d/`**          | Matches **any digit character** (`0-9`).                                                                  |
+| **`/\w/`**          | Matches **any alphanumeric character** (letters, digits, and underscores).                                |
+| **`/\s/`**          | Matches **any whitespace character** (spaces, tabs, line breaks).                                         |
+| **`/./`**           | Matches **any character except newline** (`\n`).                                                          |
+| **`/\p{L}/u`**      | Matches **any letter character**. The `u` flag enables **Unicode** mode for proper handling of Unicode.    |
+| **`/^/`**           | Matches the **start of the input** string.                                                                |
+| **`/$/`**           | Matches the **end of the input** string.                                                                  |
+| **`/(?=a)/`**       | A **look-ahead assertion** that checks if the following character is `a` without consuming it in the match.|
+| **`/[^]*?/`**       | Matches **any character except the ones in the set**, non-greedy way, meaning it matches as few as possible.|
+| **`/<.>/`**         | Matches **any single character** inside angle brackets `< >`, except newlines.                            |
+
+### Explanation Highlights:
+- **Character Sets (`/[abc]/`)**: Defines a set of characters where **any one** can be matched.
+- **Negated Sets (`/[^abc]/`)**: Matches **anything not** in the specified set.
+- **Ranges (`/[0-9]/`)**: Defines a range of characters to match.
+- **Repetition (`/x+/`, `/x*?`)**: Controls how many times a pattern can repeat.
+- **Special Characters (`/\d/`, `/\w/`, `/\s/`)**: Represent commonly used sets like digits, word characters, and whitespace.
+- **Anchors (`/^/`, `/$/`)**: Indicate the **beginning** or **end** of a string.
+- **Look-Ahead (`/(?=a)/`)**: Checks for a pattern ahead without including it in the result.
+- **Unicode (`/\p{L}/u`)**: Matches any **letter character**, considering Unicode, important for non-English characters.
+- **Greedy vs. Non-Greedy**: `/x+/` vs. `/x+?/` — Greedy matches as much as possible, non-greedy matches as little as possible.
+
 ## 🧩 Creating a Regular Expression
 
 A regular expression is an object that defines a pattern for matching character combinations in strings. There are two ways to create a regular expression in JavaScript:
