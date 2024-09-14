@@ -63,43 +63,6 @@ By overlapping tasks, you make better use of your time.
 3. **Move On Immediately**: You start working on other tasks without waiting. 📋
 4. **Email Sends in Background**: The email program sends the email while you work.
 
-
-## How Does This Relate to Programming? 💻
-
-In programming, especially in JavaScript:
-
-- **Synchronous Code**: Each line waits for the previous one to finish.
-- **Asynchronous Code**: Code doesn't wait; it moves on to the next task while previous tasks complete in the background.
-
----
-
-## Programming Example: Fetching Data from a Server 🌐
-
-### Synchronous Code Example 🕰️
-
-```javascript
-// Blocking code
-const data = fetchDataFromServer(); // This function waits for the server response
-console.log('Data received:', data); // This line waits until data is fetched
-```
-
-- **Issue**: The entire program **pauses** until `fetchDataFromServer()` completes, which can take time if the server is slow.
-
-### Asynchronous Code Example ⚡
-
-```javascript
-// Non-blocking code
-fetchDataFromServerAsync((data) => {
-  console.log('Data received:', data); // This runs when data is available
-});
-
-console.log('This runs immediately.'); // This runs without waiting
-```
-
-- **Benefit**: The program doesn't wait for the data to be fetched and can perform other tasks in the meantime.
-
----
-
 ## Benefits of Asynchronous Programming 🎁
 
 1. **Efficiency**: Makes better use of system resources by not idling during wait times.
