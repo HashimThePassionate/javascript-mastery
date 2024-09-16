@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rate Limiting User Data Display with Toggle Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: teal;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    #button:disabled {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+    #status {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+    #userData {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #444;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="button">Show User Data</button>
+  <div id="status"></div> <!-- To display status messages -->
+  <div id="userData" style="display: none;"></div> <!-- To display user data -->
+
+  <script>
+    let lastCall = 0;  // Timestamp of the last function call
+    const rateLimit = 9000;  // Rate limit in milliseconds (9 seconds)
+    const button = document.querySelector("#button"); // Get the button element
+    const userDataDiv = document.getElementById('userData'); // Get the user data display div
+    let isDataVisible = false; // Flag to track visibility of user data
+
+    function displayUserData() {
+      const userData = {
+        name: "Hashim",
+        age: 24,
+        qualification: "BSCS",
+        profession: "Python Developer"
+      };
+
+      // Toggle user data display
+      if (isDataVisible) {
+        userDataDiv.style.display = 'none'; // Hide user data
+        isDataVisible = false; // Update flag
+        console.log("User data hidden at", new Date().toISOString());
+      } else {
+        userDataDiv.innerHTML = `
+          <strong>Name:</strong> ${userData.name} <br>
+          <strong>Age:</strong> ${userData.age} <br>
+          <strong>Qualification:</strong> ${userData.qualification} <br>
+          <strong>Profession:</strong> ${userData.profession}
+        `;
+        userDataDiv.style.display = 'block'; // Show user data
+        isDataVisible = true; // Update flag
+        console.log("User data displayed at", new Date().toISOString());
+      }
+      document.getElementById('status').textContent = "User data displayed at " + new Date().toLocaleTimeString();
+    }
+
+    // Add click event listener to the button
+    button.addEventListener("click", () => {
+      const now = Date.now();  // Get the current timestamp
+      if (now - lastCall >= rateLimit) {  // Check if enough time has passed since the last call
+        displayUserData();  // Display or hide user data
+        lastCall = now;  // Update the last call time
+      } else {
+        userDataDiv.style.display = 'none'; // Ensure data is hidden during cooldown
+        isDataVisible = false; // Reset flag
+        document.getElementById('status').textContent = `Please wait for ${((rateLimit - (now - lastCall)) / 1000).toFixed(1)} seconds before showing the data again.`;
+      }
+    });
+  </script>
+
+</body>
+</html>

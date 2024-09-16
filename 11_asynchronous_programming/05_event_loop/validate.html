@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delayed Input Validation Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .input-container {
+      margin-bottom: 15px;
+    }
+    #username {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+    #validationMessage {
+      color: green;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="input-container">
+    <label for="username">Enter your username:</label><br>
+    <input type="text" id="username" placeholder="Type your username...">
+    <div id="validationMessage"></div> <!-- To display validation message -->
+  </div>
+
+  <script>
+    // JavaScript for Delayed Input Validation
+    let timeout; // Variable to hold the timeout ID
+    const inputField = document.querySelector("#username"); // Select the input field
+    const validationMessage = document.querySelector("#validationMessage"); // Select the validation message div
+
+    // Add an event listener for the 'input' event
+    inputField.addEventListener("input", (event) => {
+      clearTimeout(timeout);  // Clear the previous timeout to reset the timer
+      timeout = setTimeout(() => {  // Set a new timeout
+        validateInput(event.target.value);  // Call the validation function after 300ms
+      }, 300);  // Delay of 300ms
+    });
+
+    // Function to validate the input
+    function validateInput(value) {
+      if (value.trim() === "") {
+        validationMessage.textContent = "Username cannot be empty.";
+        validationMessage.style.color = "red";
+      } else if (value.length < 3) {
+        validationMessage.textContent = "Username must be at least 3 characters long.";
+        validationMessage.style.color = "red";
+      } else {
+        validationMessage.textContent = "Username is valid!";
+        validationMessage.style.color = "green";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animate Element Example</title>
+  <style>
+    #animatedBox {
+      position: absolute; /* Required for positioning */
+      width: 50px;
+      height: 50px;
+      background-color: teal; /* Color for visibility */
+      left: 0; /* Initial position */
+      top: 50px; /* Positioning it from the top */
+    }
+  </style>
+</head>
+<body>
+  <div id="animatedBox"></div>
+  <button id="startButton">Start Animation</button>
+
+  <script>
+    function animateElement(element) {
+      let position = 0; // Starting position
+      function frame() {
+        position++; // Increment position
+        element.style.left = position + 'px'; // Move element to the right
+        if (position < 300) { // Stop at 300px
+          requestAnimationFrame(frame); // Asynchronously request the next frame
+        }
+      }
+      requestAnimationFrame(frame); // Start the animation
+    }
+
+    console.log("Animation script loaded!");
+
+    // Wait for the DOM to fully load
+    document.addEventListener('DOMContentLoaded', () => {
+      const box = document.getElementById('animatedBox'); // Get the element to animate
+      const button = document.getElementById('startButton'); // Get the button element
+
+      // Start animation when button is clicked
+      button.addEventListener('click', () => {
+        animateElement(box); // Trigger the animation function
+        console.log("Animation started!");
+      });
+    });
+  </script>
+</body>
+</html>
