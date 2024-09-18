@@ -2,13 +2,9 @@
 
 Welcome to the world of **HTML**, the language that builds the web! HTML is the foundation of every website you visit. It gives structure to web pages and tells your browser how to display text, images, links, and other elements on the internet. Let’s dive into the basics of HTML and understand how it works! 🚀
 
----
-
 ## 📖 **What is HTML?**
 
 **HTML** stands for **HyperText Markup Language**. It is a **markup language** used to define the structure of web pages. In HTML, we use **tags** to tell the browser how to format and display content. These tags are enclosed in angle brackets, like `<tag>`. Some tags are paired (with an opening and closing tag), while others are self-closing.
-
----
 
 ## 🔍 **A Simple HTML Document**
 
@@ -30,14 +26,12 @@ Here’s a simple example of an HTML document that creates a basic web page:
 ```
 
 ### 📋 **Explanation**:
-
-- **<!doctype html>**: Tells the browser to interpret the page as modern HTML (HTML5).
-- **<html>**: The root element, everything goes inside this tag.
-- **<head>**: Contains meta-information about the page, like the title and character set.
-- **<meta charset="UTF-8">**: Declares the encoding (UTF-8) to handle text correctly.
-- **<title>**: Sets the title of the page (visible in the browser tab).
-- **<body>**: Contains the actual content of the web page, like text, images, and links.
----
+- **"!doctype html"**: Tells the browser to interpret the page as modern HTML (HTML5).
+- **"html"**: The root element, everything goes inside this tag.
+- **"head"**: Contains meta-information about the page, like the title and character set.
+- **"meta charset="UTF-8""**: Declares the encoding (UTF-8) to handle text correctly.
+- **"title"**: Sets the title of the page (visible in the browser tab).
+- **"body"**: Contains the actual content of the web page, like text, images, and links.
 
 ## 🏷️ **HTML Tags: The Building Blocks**
 
