@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Toggle Dark Mode</h2>
+    <button id="themeToggle" onclick="toggleTheme()">Enable Dark Mode</button>
+
+    <script>
+      function toggleTheme() {
+        let body = document.body;
+        let button = document.getElementById("themeToggle");
+        
+        if (body.className === "dark-mode") {
+          body.className = "";  // Remove dark mode class
+          button.textContent = "Enable Dark Mode";  // Update button text
+        } else {
+          body.className = "dark-mode";  // Add dark mode class
+          button.textContent = "Disable Dark Mode";  // Update button text
+        }
+      }
+    </script>
+  </body>
+</html>
