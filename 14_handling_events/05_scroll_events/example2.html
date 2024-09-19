@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Navbar Example</title>
+  <style>
+    #navbar {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      position: relative;
+      width: 100%;
+    }
+    #sticky-content {
+      margin-top: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="navbar">I am a Navbar</div>
+  <div id="sticky-content">Scroll down to see the sticky effect...</div>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore eveniet incidunt possimus fugit quae illum odio corporis, atque explicabo doloribus cumque voluptatum reprehenderit optio obcaecati quasi, tenetur iste veritatis saepe.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore eveniet incidunt possimus fugit quae illum odio corporis, atque explicabo doloribus cumque voluptatum reprehenderit optio obcaecati quasi, tenetur iste veritatis saepe.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore eveniet incidunt possimus fugit quae illum odio corporis, atque explicabo doloribus cumque voluptatum reprehenderit optio obcaecati quasi, tenetur iste veritatis saepe.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore eveniet incidunt possimus fugit quae illum odio corporis, atque explicabo doloribus cumque voluptatum reprehenderit optio obcaecati quasi, tenetur iste veritatis saepe.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore eveniet incidunt possimus fugit quae illum odio corporis, atque explicabo doloribus cumque voluptatum reprehenderit optio obcaecati quasi, tenetur iste veritatis saepe.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore eveniet incidunt possimus fugit quae illum odio corporis, atque explicabo doloribus cumque voluptatum reprehenderit optio obcaecati quasi, tenetur iste veritatis saepe.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore eveniet incidunt possimus fugit quae illum odio corporis, atque explicabo doloribus cumque voluptatum reprehenderit optio obcaecati quasi, tenetur iste veritatis saepe.</p>
+
+  <script>
+    let navbar = document.getElementById("navbar");
+    let sticky = navbar.offsetTop;  // Get the offset position of the navbar
+
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset >= sticky) {
+        navbar.style.position = "fixed";  // Stick the navbar at the top
+        navbar.style.top = "0";
+      } else {
+        navbar.style.position = "relative";  // Reset to its original position
+      }
+    });
+  </script>
+
+</body>
+</html>

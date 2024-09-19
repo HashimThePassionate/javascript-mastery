@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Progress Bar</title>
+  <style>
+    #progress {
+      border-bottom: 2px solid blue;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+
+  <script>
+    // Create a long page content
+    document.body.appendChild(document.createTextNode(
+      "supercalifragilisticexpialidocious ".repeat(1000)
+    ));
+
+    let progressBar = document.querySelector("#progress");
+
+    // Listen for the scroll event
+    window.addEventListener("scroll", () => {
+      let maxScroll = document.body.scrollHeight - window.innerHeight;  // Calculate the total scrollable height
+      let currentScroll = window.pageYOffset;  // Get the current scroll position
+      let scrollPercentage = (currentScroll / maxScroll) * 100;  // Calculate the scroll percentage
+      progressBar.style.width = `${scrollPercentage}%`;  // Adjust the width of the progress bar
+    });
+  </script>
+
+</body>
+</html>

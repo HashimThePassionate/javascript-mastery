@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Percentage Example</title>
+  <style>
+    #indicator {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="height: 2000px;">Scroll down to see the percentage indicator.</div>
+  <div id="indicator">0%</div>
+
+  <script>
+    let indicator = document.getElementById("indicator");
+
+    window.addEventListener("scroll", () => {
+      let maxScroll = document.body.scrollHeight - window.innerHeight;
+      let scrollPercentage = Math.round((window.pageYOffset / maxScroll) * 100);
+      indicator.textContent = `${scrollPercentage}%`;
+    });
+  </script>
+
+</body>
+</html>
