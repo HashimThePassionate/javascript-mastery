@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double-Click Event Example</title>
+</head>
+<body>
+  <p>Double-click anywhere to change the background color.</p>
+
+  <script>
+    window.addEventListener("dblclick", () => {
+      document.body.style.backgroundColor = "lightblue";
+      alert("You double-clicked! The background color has changed.");
+    });
+  </script>
+</body>
+</html>

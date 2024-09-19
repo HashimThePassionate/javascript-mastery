@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Drag Example</title>
+  <style>
+    #resize-bar {
+      background-color: orange;
+      width: 60px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <p>Drag the bar to resize it:</p>
+  <div id="resize-bar"></div>
+
+  <script>
+    let lastX;  // Track the last mouse position
+    let bar = document.getElementById("resize-bar");
+
+    bar.addEventListener("mousedown", event => {
+      // Check if the left mouse button is clicked (button == 0)
+      if (event.button == 0) {
+        lastX = event.clientX;  // Store the current mouse X position
+        window.addEventListener("mousemove", onMouseMove);
+        event.preventDefault();  // Prevent text selection
+      }
+    });
+
+    function onMouseMove(event) {
+      if (event.buttons === 0) {
+        window.removeEventListener("mousemove", onMouseMove);  // Stop when mouse button is released
+      } else {
+        let dx = event.clientX - lastX;  // Calculate movement distance
+        let newWidth = Math.max(10, bar.offsetWidth + dx);  // Set the new width
+        bar.style.width = newWidth + "px";
+        lastX = event.clientX;  // Update the last mouse position
+      }
+    }
+  </script>
+</body>
+</html>

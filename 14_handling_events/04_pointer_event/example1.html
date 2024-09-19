@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pointer Events Example</title>
+  <style>
+    body {
+      height: 200px;
+      background-color: beige;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: teal;
+      border-radius: 50%;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <p>Click anywhere to add a dot! 🖱️</p>
+
+  <script>
+    // Listen for click events on the window
+    window.addEventListener("click", event => {
+      // Create a new dot div
+      let dot = document.createElement("div");
+      dot.className = "dot";
+
+      // Position the dot where the click happened
+      dot.style.left = (event.pageX - 5) + "px";
+      dot.style.top = (event.pageY - 5) + "px";
+
+      // Add the dot to the body
+      document.body.appendChild(dot);
+    });
+  </script>
+</body>
+</html>
