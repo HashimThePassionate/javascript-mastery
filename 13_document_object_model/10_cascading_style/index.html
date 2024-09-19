@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        background-color: lightblue;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .clicked {
+        background-color: green;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="myButton" onclick="changeButton()">Click Me!</button>
+
+    <script>
+      function changeButton() {
+        let button = document.getElementById("myButton");
+        button.classList.toggle("clicked");  // Toggle the 'clicked' class
+      }
+    </script>
+  </body>
+</html>
