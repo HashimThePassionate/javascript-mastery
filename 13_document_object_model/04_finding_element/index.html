@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Check out my favorite websites:</p>
+    <a href="https://www.google.com">Google</a>
+    <a href="https://www.bing.com">Bing</a>
+
+    <script>
+      let links = document.getElementsByTagName("a");  // Get all <a> tags
+      for (let link of links) {
+        console.log(link.href);  // Print each link's href
+      }
+    </script>
+  </body>
+</html>

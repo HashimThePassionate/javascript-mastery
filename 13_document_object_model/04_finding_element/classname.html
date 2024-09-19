@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p class="highlight">This is an important message.</p>
+    <p>This is a normal message.</p>
+    <p class="highlight">Another important message!</p>
+
+    <script>
+      let importantMessages = document.getElementsByClassName("highlight");  // Find all elements with class 'highlight'
+      for (let message of importantMessages) {
+        message.style.backgroundColor = "yellow";  // Highlight them in yellow
+      }
+    </script>
+  </body>
+</html>
