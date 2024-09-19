@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Detection Example</title>
+</head>
+<body>
+  <p>Type something:</p>
+  <input type="text" id="textInput">
+  <p>Last key pressed: <span id="lastKey"></span></p>
+
+  <script>
+    let inputField = document.querySelector("#textInput");
+    let displayKey = document.querySelector("#lastKey");
+
+    inputField.addEventListener("keydown", event => {
+      displayKey.textContent = event.key;  // Display the pressed key
+    });
+  </script>
+</body>
+</html>

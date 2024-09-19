@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Event Example</title>
+</head>
+<body>
+  <p>Hold down the "V" key to turn the background violet.</p>
+
+  <script>
+    // Listen for a key being pressed down
+    window.addEventListener("keydown", event => {
+      // Check if the pressed key is "v"
+      if (event.key == "v") {
+        document.body.style.background = "violet";  // Change background color
+      }
+    });
+
+    // Listen for the key being released
+    window.addEventListener("keyup", event => {
+      // Check if the released key is "v"
+      if (event.key == "v") {
+        document.body.style.background = "";  // Reset background color
+      }
+    });
+  </script>
+</body>
+</html>

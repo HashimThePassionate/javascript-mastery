@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Shortcut Example</title>
+</head>
+<body>
+  <p>Press Ctrl + S to "save" the document.</p>
+
+  <script>
+    window.addEventListener("keydown", event => {
+      if (event.key === "s" && event.ctrlKey) {
+        alert("Document saved!");
+        event.preventDefault();  // Prevents the actual browser save dialog
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission Example</title>
+</head>
+<body>
+  <form id="myForm">
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    let form = document.querySelector("#myForm");
+
+    form.addEventListener("keydown", event => {
+      if (event.key === "Enter") {
+        alert("Form submitted!");
+        form.submit();  // Submits the form
+      }
+    });
+  </script>
+</body>
+</html>

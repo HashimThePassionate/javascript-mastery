@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Character Detection</title>
+</head>
+<body>
+  <p>Type a special character (@, #, $...):</p>
+  <input type="text" id="specialInput">
+  <p>Character Detected: <span id="charDisplay"></span></p>
+
+  <script>
+    let specialInput = document.querySelector("#specialInput");
+    let charDisplay = document.querySelector("#charDisplay");
+
+    specialInput.addEventListener("keydown", event => {
+      if (/[!@#$%^&*]/.test(event.key)) {
+        charDisplay.textContent = `You typed: ${event.key}`;
+      }
+    });
+  </script>
+</body>
+</html>
