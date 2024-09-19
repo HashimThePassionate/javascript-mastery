@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Navigation Example</title>
+    <style>
+      .highlight { background-color: yellow; }
+    </style>
+  </head>
+  <body>
+    <h1>My home page</h1>
+    <p>Hello, I am Marijn and this is my home page.</p>
+    <p>I also wrote a book! Read it <a href="http://example.com">here</a>.</p>
+
+    <script>
+      // Select the first paragraph and get its parent (body)
+      let firstParagraph = document.querySelector("p");
+      let parent = firstParagraph.parentNode;
+      console.log("Parent of first paragraph:", parent); // Logs the <body> element
+
+      // Get all child nodes of the body
+      let body = document.querySelector("body");
+      console.log("All child nodes of body:", body.childNodes); // Logs all child nodes
+
+      // Access the first and last child of the body
+      console.log("First child of body:", body.firstChild); // Might be a text node
+      console.log("Last child of body:", body.lastChild);  // Logs the second <p> element
+
+      // Move to the next and previous siblings of the first paragraph
+      let nextSibling = firstParagraph.nextSibling;
+      let previousSibling = firstParagraph.previousSibling;
+      console.log("Next sibling of first paragraph:", nextSibling); // Might be a text node or another element
+      console.log("Previous sibling of first paragraph:", previousSibling); // Logs a text node or space
+
+      // Get only element children of the body
+      console.log("Element children of body:", body.children); // Logs <h1> and both <p> elements
+
+      // Highlight the last paragraph by adding a class
+      let lastParagraph = document.querySelector("body").lastChild;
+      if (lastParagraph.nodeType === Node.ELEMENT_NODE) {
+        lastParagraph.classList.add("highlight");  // Adds yellow background to the last paragraph
+      }
+    </script>
+  </body>
+</html>
