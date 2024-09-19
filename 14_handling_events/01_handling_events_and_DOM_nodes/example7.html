@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Element Example</title>
+</head>
+<body>
+  <p id="removeMe">Click me to remove this paragraph!</p>
+
+  <script>
+    const paragraph = document.querySelector("#removeMe");
+
+    paragraph.addEventListener("click", () => {
+      paragraph.remove();  // Removes the paragraph from the DOM
+    });
+  </script>
+</body>
+</html>

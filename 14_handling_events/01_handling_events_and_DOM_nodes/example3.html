@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Once Example</title>
+</head>
+<body>
+  <button id="onceButton">Click Me Once</button>
+
+  <script>
+    const button = document.querySelector("#onceButton");
+
+    function clickOnce() {
+      console.log("Button clicked once!");
+      button.removeEventListener("click", clickOnce);  // Remove the event after it's triggered once
+    }
+
+    button.addEventListener("click", clickOnce);
+  </script>
+</body>
+</html>

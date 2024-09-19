@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Change Button</title>
+</head>
+<body>
+  <button id="colorButton">Click to Change Color</button>
+
+  <script>
+    const button = document.querySelector("#colorButton");
+    let isRed = false;
+
+    button.addEventListener("click", () => {
+      if (isRed) {
+        button.style.backgroundColor = "blue";
+      } else {
+        button.style.backgroundColor = "red";
+      }
+      isRed = !isRed;  // Toggle between red and blue
+    });
+  </script>
+</body>
+</html>

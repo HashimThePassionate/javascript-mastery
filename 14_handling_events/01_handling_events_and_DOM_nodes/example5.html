@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Visibility</title>
+</head>
+<body>
+  <div id="hiddenText" style="display: none;">Here is some hidden text!</div>
+  <button id="toggleButton">Show/Hide Text</button>
+
+  <script>
+    const button = document.querySelector("#toggleButton");
+    const text = document.querySelector("#hiddenText");
+
+    button.addEventListener("click", () => {
+      if (text.style.display === "none") {
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
