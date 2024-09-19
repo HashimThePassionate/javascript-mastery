@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>My Blog</h2>
+    <p>First post content</p>
+    <p>Second post content</p>
+    <button onclick="addPost()">Add New Post</button>
+
+    <script>
+      function addPost() {
+        let newParagraph = document.createElement("p");  // Create a new <p> element
+        newParagraph.textContent = "Third post content";  // Add text content
+        document.body.appendChild(newParagraph);  // Append the new paragraph to the body
+      }
+    </script>
+  </body>
+</html>

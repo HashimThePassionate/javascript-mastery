@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+    <button onclick="moveParagraph()">Move Third Paragraph to the Top</button>
+
+    <script>
+      function moveParagraph() {
+        let paragraphs = document.getElementsByTagName("p");
+        document.body.insertBefore(paragraphs[2], paragraphs[0]);  // Move third before first
+      }
+    </script>
+  </body>
+</html>

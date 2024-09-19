@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1 id="header">Old Title</h1>
+    <button onclick="replaceHeader()">Replace Header</button>
+
+    <script>
+      function replaceHeader() {
+        let newHeader = document.createElement("h1");  // Create a new <h1> element
+        newHeader.textContent = "New Title";  // Set the text content of the new header
+
+        let oldHeader = document.getElementById("header");
+        document.body.replaceChild(newHeader, oldHeader);  // Replace old header with new header
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>My Gallery</h2>
+    <img id="removeMe" src="image.jpg" alt="Sample Image" width="200">
+    <button onclick="removeImage()">Remove Image</button>
+
+    <script>
+      function removeImage() {
+        let image = document.getElementById("removeMe");
+        image.remove();  // Removes the image from the document
+      }
+    </script>
+  </body>
+</html>
