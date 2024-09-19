@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Name: <input type="text" id="nameField"></p>
+<p>Email: <input type="email" id="emailField"></p>
+
+<script>
+let inputs = document.querySelectorAll("input");
+
+for (let input of inputs) {
+  input.addEventListener("focus", () => {
+    input.style.outline = "2px solid rgba(0, 128, 0, 0.3)";  // Highlight the input with a blue border
+  });
+
+  input.addEventListener("blur", () => {
+    input.style.outline = "";  // Remove the border when focus is lost
+  });
+}
+</script>
+
+</body>
+</html>

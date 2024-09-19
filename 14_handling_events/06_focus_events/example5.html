@@ -1,0 +1,15 @@
+<p>Password: <input type="password" id="passwordField"></p>
+<p id="tooltip" style="display: none;">Your password must be at least 8 characters long.</p>
+
+<script>
+let passwordField = document.getElementById("passwordField");
+let tooltip = document.getElementById("tooltip");
+
+passwordField.addEventListener("focus", () => {
+  tooltip.style.display = "block";  // Show the tooltip when focused
+});
+
+passwordField.addEventListener("blur", () => {
+  tooltip.style.display = "none";  // Hide the tooltip when focus is lost
+});
+</script>

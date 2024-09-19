@@ -1,0 +1,24 @@
+<form>
+    <p>Name: <input type="text" id="name" required></p>
+    <p>Email: <input type="email" id="email" required></p>
+    <button type="submit" id="submitBtn" disabled>Submit</button>
+  </form>
+  
+  <script>
+  let nameInput = document.getElementById("name");
+  let emailInput = document.getElementById("email");
+  let submitBtn = document.getElementById("submitBtn");
+  
+  function checkForm() {
+    if (nameInput.value !== "" && emailInput.value !== "") {
+      submitBtn.disabled = false;  // Enable the submit button
+    } else {
+      submitBtn.disabled = true;  // Disable if fields are empty
+    }
+  }
+  
+  // Add focus and blur events to inputs
+  nameInput.addEventListener("blur", checkForm);
+  emailInput.addEventListener("blur", checkForm);
+  </script>
+  

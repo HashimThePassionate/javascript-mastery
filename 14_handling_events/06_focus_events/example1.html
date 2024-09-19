@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Name: <input type="text" data-help="Your full name"></p>
+    <p>Age: <input type="text" data-help="Your age in years"></p>
+    <p id="help"></p>
+<script>
+    let help = document.querySelector("#help");
+let fields = document.querySelectorAll("input");
+
+for (let field of Array.from(fields)) {
+  field.addEventListener("focus", event => {
+    let text = event.target.getAttribute("data-help");
+    help.textContent = text;  // Display help text when focused
+  });
+
+  field.addEventListener("blur", event => {
+    help.textContent = "";  // Clear help text when focus is lost
+  });
+}
+
+</script>
+</body>
+</html>
