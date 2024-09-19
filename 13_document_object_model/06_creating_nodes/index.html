@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Comments</h2>
+    <ul id="comments">
+      <li>Great post!</li>
+    </ul>
+    <button onclick="addComment()">Add Comment</button>
+
+    <script>
+      function addComment() {
+        let comment = prompt("Enter your comment:");
+        if (comment) {
+          let newComment = document.createElement("li");
+          newComment.textContent = comment;
+          document.getElementById("comments").appendChild(newComment);
+        }
+      }
+    </script>
+  </body>
+</html>
