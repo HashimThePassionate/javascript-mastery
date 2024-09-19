@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Shortcut Example</title>
+</head>
+<body>
+  <script>
+    document.addEventListener("keydown", event => {
+      if (event.ctrlKey && event.key === "s") {
+        event.preventDefault();  // Prevent default save action
+        alert("Save shortcut detected, but no save function available.");
+      }
+    });
+  </script>
+</body>
+</html>

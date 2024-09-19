@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission Example</title>
+</head>
+<body>
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    let form = document.querySelector("#myForm");
+
+    form.addEventListener("submit", event => {
+      let nameInput = document.querySelector("#name").value;
+      if (nameInput === "") {
+        event.preventDefault();  // Prevent form from submitting
+        alert("Name cannot be empty!");
+      }
+    });
+  </script>
+</body>
+</html>

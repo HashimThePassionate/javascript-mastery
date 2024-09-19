@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Move Tracker</title>
+</head>
+<body>
+  <p>Move your mouse around!</p>
+  <div id="coordinates">X: 0, Y: 0</div>
+
+  <script>
+    document.addEventListener("mousemove", (event) => {
+      document.getElementById("coordinates").textContent = 
+        `X: ${event.clientX}, Y: ${event.clientY}`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Text Example</title>
+</head>
+<body>
+  <p id="text">This is some text.</p>
+  <button id="changeText">Change Text</button>
+
+  <script>
+    const button = document.querySelector("#changeText");
+    const text = document.querySelector("#text");
+
+    button.addEventListener("click", () => {
+      text.textContent = "The text has been changed!";
+    });
+  </script>
+</body>
+</html>

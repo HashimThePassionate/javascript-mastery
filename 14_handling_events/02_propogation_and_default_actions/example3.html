@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prevent Default Action Example</title>
+</head>
+<body>
+  <a href="https://developer.mozilla.org/" id="link">Visit MDN</a>
+
+  <script>
+    let link = document.querySelector("#link");
+
+    link.addEventListener("click", event => {
+      console.log("Link click prevented.");
+      event.preventDefault(); // Prevents the browser from following the link
+    });
+  </script>
+</body>
+</html>

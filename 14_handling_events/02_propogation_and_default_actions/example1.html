@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Button Event Example</title>
+</head>
+<body>
+  <button>Click Me!</button>
+
+  <script>
+    let button = document.querySelector("button");
+
+    button.addEventListener("mousedown", event => {
+      if (event.button === 0) {
+        console.log("Left button clicked");
+      } else if (event.button === 1) {
+        console.log("Middle button clicked");
+      } else if (event.button === 2) {
+        console.log("Right button clicked");
+      }
+    });
+  </script>
+</body>
+</html>
