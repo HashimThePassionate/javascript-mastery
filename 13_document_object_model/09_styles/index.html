@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="box" style="width: 100px; height: 100px; background-color: lightgray;"></div>
+
+    <script>
+      let box = document.getElementById("box");
+
+      // Change background color on mouseover
+      box.addEventListener("mouseover", function() {
+        box.style.backgroundColor = "lightblue";
+      });
+
+      // Revert background color on mouseout
+      box.addEventListener("mouseout", function() {
+        box.style.backgroundColor = "lightgray";
+      });
+    </script>
+  </body>
+</html>
