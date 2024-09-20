@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Button to trigger the popup form -->
+  <button id="openFormBtn" class="open-button">Open Form</button>
+
+  <!-- The Popup Form -->
+  <div id="popupForm" class="popup-form">
+    <div class="form-container">
+      <h2>Submit Your Info</h2>
+      <span id="closeBtn" class="close-btn">&times;</span>
+      <form id="popupFormContent">
+        <label for="title">Title</label>
+        <div class="input-container">
+          <input type="text" id="title" name="title" placeholder="Enter title" required>
+          <span class="icon" id="title-icon"></span>
+        </div>
+        
+        <label for="description">Description</label>
+        <div class="input-container">
+          <textarea id="description" name="description" placeholder="Enter description" required></textarea>
+          <span class="icon" id="description-icon"></span>
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
