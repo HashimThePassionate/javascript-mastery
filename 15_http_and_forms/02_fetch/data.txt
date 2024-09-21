@@ -1,0 +1,2 @@
+This is the content of the file.
+It could be any text, including paragraphs, information, or even code snippets.

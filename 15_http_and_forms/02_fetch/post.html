@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST Request Example</title>
+</head>
+<body>
+    <h2>POST Data Example</h2>
+    <p id="post-status"></p>
+
+    <script>
+        // Async function to send a POST request
+        async function postData() {
+            try {
+                const response = await fetch('example/post-endpoint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer your-token-here'
+                    },
+                    body: JSON.stringify({ name: 'Jane Doe', message: 'Hello World' })
+                });
+
+                if (!response.ok) {
+                    document.getElementById('post-status').innerText = `Error: ${response.status}`;
+                    return;
+                }
+
+                // Display status code if the request was successful
+                document.getElementById('post-status').innerText = `Status: ${response.status}`;
+            } catch (error) {
+                document.getElementById('post-status').innerText = `Network error: ${error.message}`;
+            }
+        }
+
+        // Call the function to send POST request
+        postData();
+    </script>
+</body>
+</html>

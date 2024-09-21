@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example</title>
+</head>
+<body>
+    <h2>Fetch Data Example</h2>
+    <p id="status"></p>
+    <p id="content"></p>
+
+    <script>
+        // Asynchronous function to fetch data using async/await
+        async function fetchData() {
+            try {
+                // Make a GET request to fetch the data
+                const response = await fetch('./data.txt');
+                
+                // Check if the response is OK (status code 200-299)
+                if (!response.ok) {
+                    document.getElementById('status').innerText = `Error: ${response.status}`;
+                    return;
+                }
+                
+                // Display status code
+                document.getElementById('status').innerText = `Status: ${response.status}`;
+                
+                // Fetch the content as text
+                const text = await response.text();
+                
+                // Display the content
+                document.getElementById('content').innerText = text;
+            } catch (error) {
+                document.getElementById('status').innerText = `Network error: ${error.message}`;
+            }
+        }
+
+        // Call the function to fetch data
+        fetchData();
+    </script>
+</body>
+</html>

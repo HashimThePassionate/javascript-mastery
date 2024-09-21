@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch JSON Example</title>
+</head>
+<body>
+    <h2>Fetch JSON Example</h2>
+    <pre id="json-content"></pre>
+
+    <script>
+        // Async function to fetch JSON data
+        async function fetchJsonData() {
+            try {
+                const response = await fetch('./data.json');
+                if (!response.ok) {
+                    document.getElementById('json-content').innerText = `Error: ${response.status}`;
+                    return;
+                }
+
+                // Parse the response as JSON
+                const jsonData = await response.json();
+
+                // Format and display the JSON data with indentation
+                document.getElementById('json-content').innerText = JSON.stringify(jsonData, null, 2);
+            } catch (error) {
+                document.getElementById('json-content').innerText = `Network error: ${error.message}`;
+            }
+        }
+
+        // Call the function to fetch JSON data
+        fetchJsonData();
+    </script>
+</body>
+</html>
