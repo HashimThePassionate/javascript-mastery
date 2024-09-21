@@ -17,47 +17,50 @@ Understand **why JavaScript** is the backbone of the modern web. Learn its signi
 ### 2️⃣ **[02_What_is_javascript](02_What_is_javascript/)** ❓🤔  
 Get to know **what JavaScript is**, its history, and why it’s crucial in web development. 📜⚙️
 
-### 3️⃣ **[02_values_types_and_operators](02_values_types_and_operators/)** ➕📊  
+### 2️⃣ **[02.1_values_types_and_operators](02.1_values_types_and_operators/)** ➕📊  
 Explore **values, types, and operators** in JavaScript. Understand how to manage data and perform operations effectively. 💻
 
-### 4️⃣ **[03_program_structure](03_program_structure/)** 🏗️📐  
+### 3️⃣ **[03_program_structure](03_program_structure/)** 🏗️📐  
 Learn how to **organize your code** with proper structure, ensuring maintainability and readability. 🧼📦
 
-### 5️⃣ **[04_functions](04_functions/)** 🛠️🔮  
+### 4️⃣ **[04_functions](04_functions/)** 🛠️🔮  
 Master **functions**, the building blocks of any program, and make your code modular and efficient. ♻️✨
 
-### 6️⃣ **[05_arrays_and_objects](05_arrays_and_objects/)** 📦🗂️  
+### 5️⃣ **[05_arrays_and_objects](05_arrays_and_objects/)** 📦🗂️  
 Learn how to work with **arrays and objects** — essential data structures in JavaScript. 🚀⚡
 
-### 7️⃣ **[06_higher_order_functions](06_higher_order_functions/)** 🔄🤯  
+### 6️⃣ **[06_higher_order_functions](06_higher_order_functions/)** 🔄🤯  
 Unlock the power of **higher-order functions** that work with other functions for dynamic behavior! 🎩✨
 
-### 8️⃣ **[07_the_secret_life_of_objects](07_the_secret_life_of_objects/)** 🤫🔍  
+### 7️⃣ **[07_the_secret_life_of_objects](07_the_secret_life_of_objects/)** 🤫🔍  
 Uncover the hidden potential of **JavaScript Objects** and how to manipulate them like a pro. 🧠
 
-### 9️⃣ **[08_bugs_and_errors](08_bugs_and_errors/)** 🐞🧯  
+### 8️⃣ **[08_bugs_and_errors](08_bugs_and_errors/)** 🐞🧯  
 Learn how to handle **bugs and errors** to write resilient and reliable code. 🧑‍🔧⚙️
 
-### 🔟 **[09_regular_expression](09_regular_expression/)** 🔍🧩  
+### 9️⃣ **[09_regular_expression](09_regular_expression/)** 🔍🧩  
 Master **regular expressions** to perform powerful pattern matching and text manipulation. 🔮
 
-### 1️⃣1️⃣ **[10_modules](10_modules/)** 📦🔌  
+### 🔟 **[10_modules](10_modules/)** 📦🔌  
 Organize your code with **Modules** and leverage **NPM** for reusable code. 🧩✨
 
-### 1️⃣2️⃣ **[11_asynchronous_programming](11_asynchronous_programming/)** 🕰️🔄  
+### 1️⃣1️⃣ **[11_asynchronous_programming](11_asynchronous_programming/)** 🕰️🔄  
 Learn **Asynchronous Programming** with promises, `async/await`, and callbacks to handle async code efficiently. 📅
 
-### 1️⃣3️⃣ **[12_javascript_and_browser](12_javascript_and_browser/)** 🌐⚡  
+### 1️⃣2️⃣ **[12_javascript_and_browser](12_javascript_and_browser/)** 🌐⚡  
 Discover how JavaScript interacts with the **browser** to make websites dynamic and interactive. 🌈
 
-### 1️⃣4️⃣ **[13_document_object_model](13_document_object_model/)** 🖼️🏛️  
+### 1️⃣3️⃣ **[13_document_object_model](13_document_object_model/)** 🖼️🏛️  
 Master the **DOM** to manipulate HTML elements and create interactive web applications. 🕹️📜
 
-### 1️⃣5️⃣ **[14_handling_events](14_handling_events/)** 🎉⚡  
+### 1️⃣4️⃣ **[14_handling_events](14_handling_events/)** 🎉⚡  
 Learn how to **handle events** in JavaScript to make your applications responsive to user interactions. 🖱️
 
-### 1️⃣6️⃣ **[15_http_and_forms](15_http_and_forms/)** 📝✏️ *(Coming Soon)*  
+### 1️⃣5️⃣ **[15_http_and_forms](15_http_and_forms/)** ⚡ 
 Learn how to handle forms with http methods 📝
+
+### 1️⃣6️⃣ **[16_crud_with_api](16_crud_with_api/)** 📝✏️ *(Coming Soon)*  
+Learn how to create full stack todo with apis 📝
 
 ## 🎯 How to Use This Repository
 
