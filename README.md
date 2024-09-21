@@ -56,8 +56,8 @@ Master the **DOM** to manipulate HTML elements and create interactive web applic
 ### 1️⃣5️⃣ **[14_handling_events](14_handling_events/)** 🎉⚡  
 Learn how to **handle events** in JavaScript to make your applications responsive to user interactions. 🖱️
 
-### 1️⃣6️⃣ **[15_Javascript_and_forms](15_Javascript_and_forms/)** 📝✏️ *(Coming Soon)*  
-Learn how to handle forms, including validation and dynamic data handling in JavaScript. 📝
+### 1️⃣6️⃣ **[15_http_and_forms](15_http_and_forms/)** 📝✏️ *(Coming Soon)*  
+Learn how to handle forms with http methods 📝
 
 ## 🎯 How to Use This Repository
 
