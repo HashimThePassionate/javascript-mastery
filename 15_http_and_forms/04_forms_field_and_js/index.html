@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Fields Example</title>
+</head>
+<body>
+
+    <h1>Form Fields Example</h1>
+
+    <!-- Text Field -->
+    <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" value="John Doe">
+    </p>
+
+    <!-- Password Field -->
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" value="secret">
+    </p>
+
+    <!-- Checkbox -->
+    <p>
+        <label for="subscribe">Subscribe to newsletter:</label>
+        <input type="checkbox" id="subscribe" checked>
+    </p>
+
+    <!-- Color Picker -->
+    <p>
+        <label for="favcolor">Favorite Color:</label>
+        <input type="color" id="favcolor" value="#ff6600">
+    </p>
+
+    <!-- Date Picker -->
+    <p>
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" value="2023-10-13">
+    </p>
+
+    <!-- Radio Buttons -->
+    <p>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other" checked> Other
+    </p>
+
+    <!-- File Input -->
+    <p>
+        <label for="fileUpload">Upload a file:</label>
+        <input type="file" id="fileUpload">
+    </p>
+
+    <!-- Textarea -->
+    <p>
+        <label for="bio">Your Bio:</label>
+        <textarea id="bio">This is your bio.</textarea>
+    </p>
+
+    <!-- Dropdown Menu -->
+    <p>
+        <label for="dessert">Choose a dessert:</label>
+        <select id="dessert">
+            <option>Pancakes</option>
+            <option>Pudding</option>
+            <option>Ice Cream</option>
+        </select>
+    </p>
+
+    <!-- Button to trigger JavaScript -->
+    <button id="submitBtn">Submit</button>
+
+    <h2>Form Data</h2>
+    <p id="formData"></p>
+
+    <!-- JavaScript for Interaction -->
+    <script>
+        // Function to get form data and display it
+        function displayFormData() {
+            // Get form field values
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const isSubscribed = document.getElementById('subscribe').checked;
+            const favoriteColor = document.getElementById('favcolor').value;
+            const birthday = document.getElementById('birthday').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const fileUpload = document.getElementById('fileUpload').files[0] ? document.getElementById('fileUpload').files[0].name : 'No file selected';
+            const bio = document.getElementById('bio').value;
+            const dessert = document.getElementById('dessert').value;
+
+            // Display the collected form data
+            document.getElementById('formData').innerText = `
+                Name: ${name}\n
+                Password: ${password}\n
+                Subscribed: ${isSubscribed ? 'Yes' : 'No'}\n
+                Favorite Color: ${favoriteColor}\n
+                Birthday: ${birthday}\n
+                Gender: ${gender}\n
+                File Uploaded: ${fileUpload}\n
+                Bio: ${bio}\n
+                Favorite Dessert: ${dessert}
+            `;
+        }
+
+        // Add event listener to the button
+        document.getElementById('submitBtn').addEventListener('click', displayFormData);
+
+        // Example of listening for changes on a specific field
+        document.getElementById('name').addEventListener('change', function(event) {
+            console.log("Name field changed to:", event.target.value);
+        });
+    </script>
+</body>
+</html>
