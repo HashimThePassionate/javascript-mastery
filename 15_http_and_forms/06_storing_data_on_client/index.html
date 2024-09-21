@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note-Taking App</title>
+</head>
+<body>
+  <h1>Notes 📒</h1>
+  <select id="note-list"></select> 
+  <button id="add-btn">Add Note ➕</button><br><br>
+  <textarea id="note-content" style="width: 100%; height: 200px;"></textarea>
+
+  <script>
+    let noteList = document.querySelector("#note-list");
+    let noteContent = document.querySelector("#note-content");
+    let state;
+
+    // Function to update the state and localStorage
+    function setState(newState) {
+      noteList.textContent = "";  // Clear existing options
+      for (let noteName of Object.keys(newState.notes)) {
+        let option = document.createElement("option");
+        option.textContent = noteName;  // Display note names
+        if (newState.selected === noteName) option.selected = true;
+        noteList.appendChild(option);
+      }
+      noteContent.value = newState.notes[newState.selected];  // Show selected note
+      localStorage.setItem("Notes", JSON.stringify(newState));  // Save state to localStorage
+      state = newState;
+    }
+
+    // Initialize state from localStorage or use default state
+    setState(JSON.parse(localStorage.getItem("Notes")) ?? {
+      notes: {"shopping list": "Carrots 🥕\nRaisins 🍇"},
+      selected: "shopping list"
+    });
+
+    // Update note on selection change
+    noteList.addEventListener("change", () => {
+      setState({notes: state.notes, selected: noteList.value});
+    });
+
+    // Save note content on text change
+    noteContent.addEventListener("change", () => {
+      let {selected} = state;
+      setState({
+        notes: {...state.notes, [selected]: noteContent.value},
+        selected
+      });
+    });
+
+    // Add a new note
+    document.querySelector("#add-btn").addEventListener("click", () => {
+      let newNoteName = prompt("Enter a name for your note:");
+      if (newNoteName) {
+        setState({
+          notes: {...state.notes, [newNoteName]: ""},
+          selected: newNoteName
+        });
+      }
+    });
+  </script>
+</body>
+</html>
