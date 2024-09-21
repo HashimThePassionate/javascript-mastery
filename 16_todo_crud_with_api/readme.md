@@ -2,14 +2,8 @@
 A modern **Todo Application** built with **Django**, **Django REST Framework**, **Bootstrap 5**, and JavaScript **async/await**. This project demonstrates how to create a dynamic task manager with a clean UI and robust backend API.
 
 # 📹 Demo Video
+> [**Click to View Todo**](https://youtu.be/wJvorVZC5qM)
 
-<div style="text-align: center;">
-  <video width="500" controls>
-    <source src="./assests/todo application.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <br>
-</div>
 
 
 ## 🚀 Features
