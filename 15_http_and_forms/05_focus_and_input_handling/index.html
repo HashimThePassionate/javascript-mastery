@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Interaction Example</title>
+</head>
+<body>
+
+    <h1>Interactive Form Example</h1>
+
+    <!-- Text input that will be focused automatically when the page loads -->
+    <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" value="John Doe">
+    </p>
+
+    <!-- Password input -->
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" value="secret">
+    </p>
+
+    <!-- Checkbox for background color change -->
+    <p>
+        <label for="purple">Make this page purple:</label>
+        <input type="checkbox" id="purple">
+    </p>
+
+    <!-- Radio buttons for selecting background color -->
+    <p>Choose a background color:</p>
+    <label><input type="radio" name="color" value="orange"> Orange</label>
+    <label><input type="radio" name="color" value="lightgreen"> Light Green</label>
+    <label><input type="radio" name="color" value="lightblue"> Light Blue</label>
+
+    <!-- File input -->
+    <p>
+        <label for="fileUpload">Upload a file:</label>
+        <input type="file" id="fileUpload">
+    </p>
+
+    <!-- Textarea for comments -->
+    <p>
+        <label for="comments">Comments:</label>
+        <textarea id="comments">This is a comment.</textarea>
+    </p>
+
+    <!-- Submit button -->
+    <button id="submitBtn">Submit</button>
+
+    <!-- Paragraph to display form data -->
+    <h2>Form Data:</h2>
+    <p id="formData"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
