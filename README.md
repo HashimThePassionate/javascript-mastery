@@ -59,7 +59,7 @@ Learn how to **handle events** in JavaScript to make your applications responsiv
 ### 1️⃣5️⃣ **[15_http_and_forms](15_http_and_forms/)** ⚡ 
 Learn how to handle forms with http methods 📝
 
-### 1️⃣6️⃣ **[16_todo_crud_with_api](16_todo_crud_with_api/)** 📝✏️ *(Coming Soon)*  
+### 1️⃣6️⃣ **[16_todo_crud_with_api](16_todo_crud_with_api/)**  
 Learn how to create full stack todo with apis 📝
 
 ## 🎯 How to Use This Repository
