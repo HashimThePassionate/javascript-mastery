@@ -1,11 +1,22 @@
-# JavaScript Exercises
+## 📐 Looping a Triangle
 
-Submit this assignment  till tonight
+For this exercise, you'll need to print a triangle that grows with each iteration of the loop.
 
-## Looping a Triangle
+### Solution Code:
 
-Write a loop that makes seven calls to `console.log` to output the following triangle:
+```javascript
+for (let line = "#"; line.length <= 7; line += "#") {
+  console.log(line);
+}
+```
 
+### Explanation:
+
+1. **Starting Value**: We begin with a single `#` and bind it to `line`.
+2. **Loop Condition**: The loop continues as long as `line.length` is 7 or less.
+3. **Incrementing**: After each iteration, a `#` is added to `line` by setting `line = line + "#"`.
+
+This will produce:
 ```
 #
 ##
@@ -16,35 +27,74 @@ Write a loop that makes seven calls to `console.log` to output the following tri
 #######
 ```
 
-### Hint
+---
 
-You can find the length of a string by writing `.length` after it.
+## 🔄 FizzBuzz
+
+This classic problem requires checking divisibility and printing specific words for multiples.
+
+### Solution Code:
 
 ```javascript
-let abc = "abc";
-console.log(abc.length); // → 3
+for (let number = 1; number <= 100; number++) {
+  if (number % 3 === 0 && number % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (number % 3 === 0) {
+    console.log("Fizz");
+  } else if (number % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(number);
+  }
+}
 ```
 
-## FizzBuzz
+### Explanation:
 
-Write a program that uses `console.log` to print all the numbers from 1 to 100, with two exceptions:
+1. **Loop Setup**: The loop runs from 1 to 100.
+2. **Conditions**:
+   - If `number` is divisible by both 3 and 5, we print `"FizzBuzz"`.
+   - If only divisible by 3, print `"Fizz"`.
+   - If only divisible by 5, print `"Buzz"`.
+3. **Default Case**: If none of the conditions are met, print the `number` itself.
 
-1. For numbers divisible by 3, print "Fizz" instead of the number.
-2. For numbers divisible by 5 (and not 3), print "Buzz" instead.
+---
 
-When you have that working, modify your program to print "FizzBuzz" for numbers that are divisible by both 3 and 5 (and still print "Fizz" or "Buzz" for numbers divisible by only one of those).
+## ♟ Chessboard
 
-### Note
+Here, you'll create a grid pattern that resembles a chessboard.
 
-This is actually an interview question that has been claimed to weed out a significant percentage of programmer candidates. So if you solve it, your labor market value just went up.
+### Solution Code:
 
-## Chessboard
+```javascript
+let size = 8; // You can change this to any desired size
+let board = "";
 
-Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid, there is either a space or a `#` character. The characters should form a chessboard pattern.
+for (let y = 0; y < size; y++) {
+  for (let x = 0; x < size; x++) {
+    if ((x + y) % 2 === 0) {
+      board += "#";
+    } else {
+      board += " ";
+    }
+  }
+  board += "\n";
+}
 
-### Example Output
+console.log(board);
+```
 
-Passing this string to `console.log` should show something like this:
+### Explanation:
+
+1. **Define Size**: The `size` variable allows you to change the grid size dynamically.
+2. **Outer Loop (Rows)**: The outer loop represents each row (`y`).
+3. **Inner Loop (Columns)**: The inner loop represents each column (`x`).
+4. **Condition**: `(x + y) % 2 === 0` alternates between `#` and a space:
+   - When the sum of `x` and `y` is even, we add `#`.
+   - When it’s odd, we add a space.
+5. **Newline Character**: After each row (outer loop), we add `\n` to create a new row.
+
+This code will output a grid pattern, similar to:
 
 ```
 # # # #
@@ -57,6 +107,4 @@ Passing this string to `console.log` should show something like this:
  # # # #
 ```
 
-### Advanced
-
-When you have a program that generates this pattern, define a binding `size = 8` and change the program so that it works for any size, outputting a grid of the given width and height.
+---
