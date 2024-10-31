@@ -85,6 +85,16 @@ const hummus = function(factor) {
 };
 
 hummus(2);
+
+function outer(firstname) {
+    function inner(lastname) {
+        return `${firstname} ${lastname}`;
+    }
+    return inner('Hashim'); // Provide 'Hashim' as the lastname argument here
+}
+
+let res = outer('Muhammad');
+console.log(res); // Output: "Muhammad Hashim"
 ```
 
 ### 🌟 Key Points
