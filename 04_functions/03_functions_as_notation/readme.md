@@ -17,12 +17,27 @@ In JavaScript, a **function** isn’t just a one-time command. It’s a **value*
 Here’s an example where we assign a function to a variable and later change it if needed:
 
 ```javascript
-let launchMissiles = function() {
-  missileSystem.launch("now");
-};
-if (safeMode) {
-  launchMissiles = function() {/* do nothing */};
+let safeMode = true;
+const missileSystem = {
+    launch:function(t){
+        console.log(`Missile Launched at ${t}`);
+        
+    }
 }
+
+let launchMisssiles = function() {
+    missileSystem.launch('Pluto');
+}
+
+launchMisssiles();
+
+if(safeMode){
+    launchMisssiles = function(){
+    console.log('Safe Mode is ON');
+    }
+}
+
+launchMisssiles();
 ```
 
 ### ✨ Key Takeaways
