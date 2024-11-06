@@ -1,4 +1,4 @@
-# The `instanceof` Operator in JavaScript
+# The `instanceof` Operator in JavaScript 
 
 ## Introduction
 The `instanceof` operator is a binary operator in JavaScript used to determine whether an object is an instance of a specific class or constructor function. It is particularly useful when you need to check if an object was derived from a specific class, including through inheritance.
