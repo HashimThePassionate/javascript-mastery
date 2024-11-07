@@ -1,4 +1,4 @@
-# 🌀✨ **Polymorphism in JavaScript** 📚🔍
+# 🌀✨ **Polymorphism in JavaScript**  📚🔍
 
 Polymorphism is a fundamental concept in programming that enhances flexibility and reusability in your code. In JavaScript, polymorphism allows functions and methods to operate on objects of different types, provided they adhere to a common interface. This means a single function can seamlessly handle various object types, making your code more adaptable and efficient. This guide delves into the intricacies of polymorphism in JavaScript, offering clear explanations and practical examples to solidify your understanding. Let's embark on this journey! 🚀😊
 

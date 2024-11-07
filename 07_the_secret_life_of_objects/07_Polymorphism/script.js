@@ -9,7 +9,7 @@ function Rabbit(type) {
   let killerRabbit = new Rabbit("killer");
   console.log(String(killerRabbit)); // Output: a killer rabbit
 
-
+   
 // ----------------------------------------------------------------------------------------------------------------
 Array.prototype.forEach.call({
     length: 2,
