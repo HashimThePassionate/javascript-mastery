@@ -2,6 +2,35 @@
 
 When writing programs, there are situations where things go wrong, and you need a mechanism to handle these errors gracefully. This is where **exceptions** come into play. Exceptions allow your program to stop what it’s doing when an error occurs and jump to a place in the code that knows how to handle the problem.
 
+# 📑 Table of Contents
+1. [Exceptions 🚨](#exceptions-)
+2. [🧩 What Are Exceptions?](#-what-are-exceptions)
+   - [🔍 Example: Throwing and Catching Exceptions](#-example-throwing-and-catching-exceptions)
+   - [💡 Explanation](#💡-explanation)
+   - [🖥️ Console Output](#🖥️-console-output)
+3. [🛑 The Power of Exceptions](#-the-power-of-exceptions)
+   - [🛠️ Example: Exception Handling in Action](#🛠️-example-exception-handling-in-action)
+   - [💡 Explanation](#💡-explanation-1)
+   - [🖥️ Console Output](#🖥️-console-output-1)
+4. [🏦 Understanding Accounts Example](#-understanding-accounts-example)
+   - [🏷️ getAccount Function](#-getaccount-function)
+   - [💸 transfer Function](#💸-transfer-function)
+   - [🖥️ Console Output](#🖥️-console-output-2)
+5. [🌀 Cleaning Up with `finally`](#-cleaning-up-with-finally)
+   - [🔍 Example: Using `finally` for Cleanup](#-example-using-finally-for-cleanup)
+   - [💡 Explanation](#💡-explanation-2)
+   - [🎉 Example Usage](#🎉-example-usage)
+   - [📊 Final Account Balances](#📊-final-account-balances)
+6. [🛡️ Selective Catching of Exceptions](#🛡️-selective-catching-of-exceptions)
+   - [🔄 Example: Custom Error Types](#🔄-example-custom-error-types)
+   - [💡 Explanation](#💡-explanation-3)
+   - [🎬 Summary](#🎬-summary)
+7. [✅ Assertions: Catching Programmer Mistakes](#✅-assertions-catching-programmer-mistakes)
+   - [🔍 Example: Using Assertions](#🔍-example-using-assertions)
+   - [💡 Explanation](#💡-explanation-4)
+8. [🚀 Conclusion](#🚀-conclusion)
+
+---
 ## 🧩 What Are Exceptions?
 
 Exceptions are a way for your program to deal with unexpected situations by "throwing" an error. When an exception is thrown, it immediately stops the current function's execution and jumps back through the call stack until it finds a place that can handle the exception, known as "unwinding the stack."
