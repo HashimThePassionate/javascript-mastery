@@ -2,6 +2,22 @@
 
 When working with **regular expressions** (regex) in JavaScript, you often need to check for **multiple patterns** in a single match. This is where the **choice pattern** comes in handy! The **pipe character `|`** allows you to specify **choices** between different patterns. Let's dive into how it works and explore it with real-world examples! 🚀
 
+---
+
+## 📚 Table of Contents
+
+1. [What are Choice Patterns? 📝](#what-are-choice-patterns-)
+   - [Basic Syntax 🖊️](#basic-syntax-)
+2. [Real-World Example: Counting Animals on a Farm 🐷🐄🐔](#real-world-example-counting-animals-on-a-farm-)
+   - [Example Code 🧑‍💻](#example-code-)
+3. [How Does the Pipe `|` Operator Work? 🚦](#how-does-the-pipe--operator-work-)
+   - [Using Parentheses to Group Choices 🎯](#using-parentheses-to-group-choices-)
+   - [Example Code: Matching Multiple Words in a Sentence 🖊️](#example-code-matching-multiple-words-in-a-sentence-🖊️)
+4. [Advanced Use Case: Finding Multiple Alternatives in Text 📚](#advanced-use-case-finding-multiple-alternatives-in-text-)
+5. [Summary ✨](#summary-)
+
+---
+
 ## What are Choice Patterns? 📝
 
 **Choice patterns** in regex allow you to match **one pattern out of several options**. The **pipe character `|`** is used to separate different pattern options. This is especially useful when you want to match a **single pattern** from **multiple alternatives**.
@@ -11,7 +27,9 @@ When working with **regular expressions** (regex) in JavaScript, you often need 
 - **`pattern1|pattern2`** matches `pattern1` **or** `pattern2`.
 - **`(pattern1|pattern2|pattern3)`** matches `pattern1`, `pattern2`, **or** `pattern3`.
 
-## Real-World Example: Counting Animals on a Farm 🐷🐄🐔 
+---
+
+## Real-World Example: Counting Animals on a Farm 🐷🐄🐔
 
 Suppose you want to find out if a text contains a **number** followed by the words **pig**, **cow**, or **chicken**, including their plural forms (**pigs**, **cows**, **chickens**). Instead of writing three separate regex patterns, you can use a **choice pattern** to combine them into one!
 
@@ -32,6 +50,8 @@ console.log(animalCount.test("15 pugs")); // ❌ False - "pugs" is not one of th
 - **`s?`**: Matches the letter **`s` zero or one time** to account for both singular (e.g., "pig") and plural (e.g., "pigs") forms.
 
 This pattern allows you to check if a text contains a **number** followed by any of these **three animal names**, with an optional plural **"s"**.
+
+---
 
 ## How Does the Pipe `|` Operator Work? 🚦
 
@@ -57,6 +77,8 @@ console.log(genrePattern.test("A romance novel")); // ❌ False - Does not match
 - **`(fantasy|mystery|thriller)`**: Matches any **one of these three genres**.
 - This pattern helps you search for books that belong to **specific genres** without having to write multiple regular expressions.
 
+---
+
 ## Advanced Use Case: Finding Multiple Alternatives in Text 📚
 
 Imagine a scenario where you want to check if a text mentions any **fruit** names such as **"apple"**, **"banana"**, or **"orange"**. You can use choice patterns to create a single regex for this:
@@ -74,6 +96,8 @@ console.log(fruitPattern.test("I have a pineapple.")); // ❌ False - "pineapple
 - **`\b`**: Matches a **word boundary** to ensure we only match **whole words** like "apple" and not "pineapple".
 - **`(apple|banana|orange)`**: Matches any **one of the specified fruits**.
 
+---
+
 ## Summary ✨
 
 - **Choice Patterns** using the pipe operator `|` allow you to match **one pattern out of several options**.  
@@ -81,3 +105,9 @@ console.log(fruitPattern.test("I have a pineapple.")); // ❌ False - "pineapple
 - Real-world uses include searching for specific words in text, validating input with multiple possibilities, and more!
 
 Using **choice patterns** makes regex more powerful and flexible, helping you solve real-world problems with less code and more precision! 🛠️🌟
+
+---
+
+## 🚀 Conclusion 🚀
+
+**Choice patterns** are an essential aspect of regular expressions in JavaScript, enabling developers to efficiently match one pattern out of multiple alternatives. By utilizing the pipe character `|` and grouping with parentheses `()`, you can create versatile and concise regex patterns that handle a wide range of scenarios. Whether you're validating user input, searching for specific terms, or parsing complex strings, choice patterns enhance the flexibility and power of your regex toolkit. Embrace these techniques to write cleaner, more effective regexes and streamline your text processing tasks! Happy coding! 💻✨
