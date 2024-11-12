@@ -240,6 +240,14 @@ console.log(strongPasswordPattern.test("mypassword")); // Strong password
 
 console.log(strongPasswordPattern.test("pass")); // Too short
 // → false ❌
+
+let strongPasswordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+console.log(strongPasswordPattern.test("MyPass123@"));  // true ✅ (Strong password)
+console.log(strongPasswordPattern.test("mypassword"));  // false ❌ (No capital letter, no number, no special character)
+console.log(strongPasswordPattern.test("Password123")); // false ❌ (No special character)
+console.log(strongPasswordPattern.test("Pass@1"));      // false ❌ (Less than 8 characters)
+console.log(strongPasswordPattern.test("My$ecureP@ss1"));// true ✅ (Strong password)
+
 ```
 
 **💡 Explanation:**
