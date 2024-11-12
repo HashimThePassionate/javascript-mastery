@@ -199,6 +199,14 @@ console.log(postalCodePattern.test("123")); // Too few digits
 
 console.log(postalCodePattern.test("123456")); // Too many digits
 // → false ❌
+
+let regex = new RegExp("^\\d{5}$");
+console.log(regex.test("12345")); // Valid postal code
+// → true ✅
+console.log(regex.test("123")); // Too few digits
+// → false ❌
+console.log(regex.test("123456")); // Too many digits
+// → false ❌
 ```
 
 **💡 Explanation:**
