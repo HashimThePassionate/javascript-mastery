@@ -20,6 +20,20 @@ Grouping in regular expressions allows you to apply repetition operators like `*
 
 Grouping in regular expressions is like putting certain parts of a pattern together so they can be treated as a single unit. This is done using **parentheses `()`**. When you group a part of a pattern, any repetition operator following the group will apply to **everything inside the parentheses**.
 
+```JS
+let regexLiteral = /boo+(hoo+)+/i
+
+console.log(regexLiteral.test('Boohoo')) // true;
+console.log(regexLiteral.test('BooHoo')) // true;
+console.log(regexLiteral.test('BooHooo')) // true;
+console.log(regexLiteral.test('BooHooHoo')) // true;
+console.log(regexLiteral.test('BooHooHooo')) // true;
+console.log(regexLiteral.test('BooHooHooHoo')) // true;
+console.log(regexLiteral.test('BooHooHooHooo')) // true;
+console.log(regexLiteral.test('BooHooHooHooHoo')) // true;
+console.log(regexLiteral.test('BooHooHooHooHooo')) // true;
+console.log(regexLiteral.test('BooHooHooHooHooHoo')) // true;
+```
 ### 🔍 How Grouping Works
 
 Consider the regular expression: `/boo+(hoo+)+/i`
