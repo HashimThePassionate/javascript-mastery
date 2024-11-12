@@ -96,6 +96,13 @@ Sometimes, you need to match **any character except** specific ones. This is ach
 let nonBinary = /[^01]/;
 console.log(nonBinary.test("1100100010100110")); // Outputs: false
 console.log(nonBinary.test("0111010112101001")); // Outputs: true
+let regex = new RegExp('[^0-9]')
+let regexLiteral = /[^0-9^a-z^A-Z]/
+console.log(regex.test('101010101010'))
+console.log(regexLiteral.test('101010101010'))
+console.log(regex.test('10101010102'));
+console.log(regexLiteral.test('1010101010abc'));
+console.log(regex.test('1010101010$'));
 ```
 
 **💡 Explanation:**
