@@ -93,6 +93,14 @@ console.log(numberPattern.test("42")); // Matches without spaces
 
 console.log(numberPattern.test("   ")); // Only spaces, no digits
 // → false ❌
+// Regex Expression
+let regex = new RegExp('\\s*\\d+\\s*')
+console.log(regex.test("  42 ")); // Matches with spaces around
+// → true ✅
+console.log(regex.test("42")); // Matches without spaces
+// → true ✅
+console.log(regex.test("   ")); // Only spaces, no digits
+// → false ❌
 ```
 
 **💡 Explanation:**
