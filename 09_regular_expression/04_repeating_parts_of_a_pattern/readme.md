@@ -37,9 +37,12 @@ console.log(phonePattern.test("+123456789")); // Valid phone number
 // → true ✅
 
 console.log(phonePattern.test("+")); // No digits after '+'
-/*
-→ false ❌
-*/
+//→ false ❌
+let regex = new RegExp('\\+\\d+')
+console.log(regex.test("+123456789")); // Valid phone number
+// → true ✅
+console.log(regex.test("+923865745171")); // No digits after '+'
+//→ false ❌
 ```
 
 **💡 Explanation:**
