@@ -101,6 +101,13 @@ console.log(regex.test("42")); // Matches without spaces
 // → true ✅
 console.log(regex.test("   ")); // Only spaces, no digits
 // → false ❌
+let regex = new RegExp('colou?r');
+console.log(regex.test("color")); // American spelling
+// → true ✅
+console.log(regex.test("colour")); // British spelling
+// → true ✅
+console.log(regex.test("colouur")); // u comes twice
+// → false ❌
 ```
 
 **💡 Explanation:**
