@@ -133,6 +133,19 @@ Imagine you need to match both digits and periods in a string, such as in decima
 let pattern = /[\d.]/;
 console.log(pattern.test("3.14")); // Outputs: true
 console.log(pattern.test("pi"));   // Outputs: false
+let regex = new RegExp('\\d{2}\\.')
+let regexLiteral = /\d{2}\./
+console.log(regex.test('25.102444')); //true
+console.log(regexLiteral.test('25.102444')); //true
+console.log(regex.test('2.102444')); //false
+// \d = 0-9
+// . = any character except new line
+
+
+
+
+// console.log("Hello \\'s World");
+
 ```
 
 **💡 Explanation:**
