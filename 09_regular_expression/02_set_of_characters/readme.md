@@ -61,6 +61,10 @@ Suppose you want to validate a date and time format like `"01-30-2003 15:20"` us
 let dateTime = /\d\d-\d\d-\d\d\d\d \d\d:\d\d/;
 console.log(dateTime.test("01-30-2003 15:20")); // Outputs: true
 console.log(dateTime.test("30-jan-2003 15:20")); // Outputs: false
+//With RegexConstructor
+let regex = new  RegExp('\\d\\d-\\d\\d-\\d\\d\\d\\d \\d\\d:\\d\\d');
+let datetime = '11-11-2024 11:17'
+console.log(regex.test(datetime)); // true
 ```
 
 **💡 Explanation:**
