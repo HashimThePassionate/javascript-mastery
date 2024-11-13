@@ -214,6 +214,11 @@ let quotedText = /'([^']*)'/;
 let match = quotedText.exec("she said 'hello'");
 console.log(match);
 // → ["'hello'", "hello"]
+let input1 = "My favorite book is 'Harry Potter'".match(quotedText);
+let input2 = "He shouted 'Stop right there!'".match(quotedText);
+let input3 = "The code is: 'let x = 10;'".match(quotedText);
+let input4 = "I heard him say 'goodbye'".match(quotedText);
+let input5 = "This is just a test without quotes".match(quotedText);
 ```
 
 **💡 Explanation:**
