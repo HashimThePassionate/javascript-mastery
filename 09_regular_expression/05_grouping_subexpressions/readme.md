@@ -168,14 +168,19 @@ Suppose you want to match only certain email domains, like `gmail.com` or `yahoo
 
 ```javascript
 let emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/i;
+let emailPatternRegex = new RegExp('^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\\.com$', 'i');
 
 console.log(emailPattern.test("user@gmail.com")); // Matches Gmail
 // → true ✅
-
+console.log(emailPatternRegex.test("user@gmail.com")); // Matches Gmail
+// → true ✅
 console.log(emailPattern.test("user@yahoo.com")); // Matches Yahoo
 // → true ✅
-
+console.log(emailPatternRegex.test("user@yahoo.com")); // Matches Yahoo
+// → true ✅
 console.log(emailPattern.test("user@hotmail.com")); // Does not match Hotmail
+// → false ❌
+console.log(emailPatternRegex.test("user@hotmail.com")); // Does not match Hotmail
 // → false ❌
 ```
 
