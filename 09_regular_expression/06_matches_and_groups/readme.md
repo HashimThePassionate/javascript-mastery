@@ -335,6 +335,12 @@ If the string were `"1"`, the result would be `["1", "1"]`.
 
 ### ⚠️ When to Use Optional and Repeated Groups
 
+```js
+let regex = new RegExp('(colou?r)+','g');
+let str1 = 'color colour';
+console.log(str1.match(regex));
+```
+
 - **Optional Groups**:
   - **Use Case**: Patterns that may **optionally include** certain elements, such as optional suffixes or prefixes.
   - **Example**: Matching "color" and "colour" with `/colou?r/`.
