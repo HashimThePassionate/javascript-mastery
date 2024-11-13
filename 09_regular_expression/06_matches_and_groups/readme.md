@@ -370,9 +370,13 @@ Let’s look at an example where we match the pattern "na" repeated multiple tim
 
 ```javascript
 console.log(/(?:na)+/.exec("banana"));
-/*
-→ ["nana"]
-*/
+//→ ["nana"]
+let regex1 = new RegExp('ba(na?)+');
+let str = 'banana banan bananananananana';
+console.log(str.match(regex1)); //  ['banana', 'na', index: 0, input: 'banana banan bananananananana', groups: undefined]
+let regex2 = new RegExp('ba(?:na)+')
+console.log(str.match(regex2));// ['banana', index: 0, input: 'banana banan bananananananana', groups: undefined]
+
 ```
 
 **💡 Explanation:**
