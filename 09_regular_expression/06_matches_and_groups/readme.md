@@ -265,6 +265,14 @@ console.log(/bad(ly)?/.exec("bad"));
 /*
 → ["bad", undefined]
 */
+let regex = new RegExp("begin(ing)?",'ig');
+let str1 = "begining of the project";
+let str2 = "it will begin shortly";
+let str3 = "Begining is crucial";
+let str4 = "began or begining?";
+let str5 = "we will begin again";
+console.log(regex.exec(str5));
+
 ```
 
 **💡 Explanation:**
