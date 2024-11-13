@@ -305,6 +305,19 @@ console.log(/(\d)+/.exec("123"));
 /*
 → ["123", "3"]
 */
+let regex = new RegExp('(\\d)+','g');
+let str1 = "Price is $1101 - $120 - $1";
+let str2 = "Order ID: 789654";          
+let str3 = "There are 24 apples";       
+let str4 = "No digits here!";         
+let str5 = "My lucky number is 7";      
+let str6 = "Contact: +923001234567";    
+let str7 = "Version 2.1.0";             
+let str8 = "Temperature: -15°C";        
+let str9 = "Model X2024";               
+let str10 = "Coordinates: 34.056, -118.245"; 
+
+console.log(str1.match(regex));
 ```
 
 **💡 Explanation:**
