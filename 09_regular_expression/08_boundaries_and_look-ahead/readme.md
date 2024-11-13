@@ -61,6 +61,16 @@ const imagePattern = /\.(jpg|png|gif)$/; // Pattern to match image extensions
 console.log(imagePattern.test("picture.jpg")); // ✅ True - Ends with ".jpg"
 console.log(imagePattern.test("document.pdf")); // ❌ False - Ends with ".pdf"
 console.log(imagePattern.test("photo.png ")); // ❌ False - Extra space after ".png"
+
+let regex = new RegExp('.(jpg|png|jpeg)$')
+let file1 = 'image.jpg'
+let file2 = 'image.png'
+let file3 = 'image.jpeg'
+let file4 = 'image.txt'
+let file5 = 'image.pdf'
+let file6 = 'image.doc'
+console.log(regex.test(file6))
+
 ```
 
 📝 **Explanation:**  
