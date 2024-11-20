@@ -105,17 +105,23 @@ Many events come with a **default action**. For example, clicking a link navigat
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prevent Default Action Example</title>
+  <title>Load Page Without Refresh</title>
 </head>
 <body>
-  <a href="https://developer.mozilla.org/" id="link">Visit MDN</a>
+  <h1>Navigate Without Page Refresh</h1>
+  <a href="https://www.bisep.edu.pk/" id="link">Visit MDN</a>
+  <div style="margin-top: 20px; border: 1px solid #ccc; width: 100%; height: 500px;">
+    <iframe id="contentFrame" style="width: 100%; height: 100%; border: none;"></iframe>
+  </div>
 
   <script>
     let link = document.querySelector("#link");
+    let iframe = document.querySelector("#contentFrame");
 
     link.addEventListener("click", event => {
-      console.log("Link click prevented.");
-      event.preventDefault(); // Prevents the browser from following the link
+      event.preventDefault(); // Prevent the default link behavior
+      console.log("Navigating to MDN inside iframe.");
+      iframe.src = link.href; // Load the target page inside the iframe
     });
   </script>
 </body>
