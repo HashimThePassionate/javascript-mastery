@@ -13,7 +13,7 @@ Pointer events in JavaScript allow us to handle user interactions with devices l
 
 In this example, we create a simple app that draws a dot where the user clicks on the screen.
 
-### **HTML and JavaScript Code**:
+### **HTML and JavaScript Code PART 1**:
 
 ```html
 <!DOCTYPE html>
@@ -52,6 +52,82 @@ In this example, we create a simple app that draws a dot where the user clicks o
 
       // Add the dot to the body
       document.body.appendChild(dot);
+    });
+  </script>
+</body>
+</html>
+```
+### **HTML and JavaScript Code PART 2**:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draw Lines Example</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: beige;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="drawingCanvas"></canvas>
+
+  <script>
+    // Select the canvas element
+    const canvas = document.getElementById("drawingCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Set canvas size to match the window
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Variables to track drawing state
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    // Function to start drawing
+    canvas.addEventListener("mousedown", (event) => {
+      isDrawing = true;
+      [lastX, lastY] = [event.offsetX, event.offsetY]; // Set starting point
+    });
+
+    // Function to stop drawing
+    canvas.addEventListener("mouseup", () => {
+      isDrawing = false;
+    });
+
+    canvas.addEventListener("mouseout", () => {
+      isDrawing = false;
+    });
+
+    // Function to draw
+    canvas.addEventListener("mousemove", (event) => {
+      if (!isDrawing) return;
+
+      // Set line styles
+      ctx.strokeStyle = "teal"; // Line color
+      ctx.lineWidth = 2; // Line width
+      ctx.lineCap = "round"; // Smooth line ends
+
+      // Start drawing
+      ctx.beginPath();
+      ctx.moveTo(lastX, lastY); // Move to the last position
+      ctx.lineTo(event.offsetX, event.offsetY); // Draw to the new position
+      ctx.stroke();
+
+      // Update last position
+      [lastX, lastY] = [event.offsetX, event.offsetY];
     });
   </script>
 </body>
