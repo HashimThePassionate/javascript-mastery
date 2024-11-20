@@ -156,22 +156,61 @@ By using these methods, you can dynamically change how your webpage behaves, int
 
 ## **4 Simple Real-World Examples** 🌟
 
-### 1. **Changing a Button’s `disabled` State** 🔒
+### 1. **Disable a button when user submit the form** 🔒
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+  </head>
   <body>
-    <button id="submitBtn" disabled>Submit</button>
-    <button onclick="enableButton()">Enable Submit Button</button>
-
+    <h2>Student Information Form</h2>
+    <form id="studentForm" onsubmit="handleSubmit(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+  
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required><br><br>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+  
+      <button type="submit" id="submitBtn">Submit</button>
+    </form>
+  
     <script>
-      function enableButton() {
-        let button = document.getElementById("submitBtn");
-        button.removeAttribute("disabled");  // Enable the submit button by removing "disabled" attribute
+      function handleSubmit(event) {
+        event.preventDefault(); // Prevent the form from refreshing the page
+        let submitButton = document.getElementById("submitBtn");
+  
+        // Display a message (optional)
+        alert("Form submitted successfully!");
+  
+        // Disable the submit button
+        submitButton.setAttribute("disabled", "true");
+  
+        // Simulate form submission process
+        console.log("Form data submitted:");
+        const formData = new FormData(event.target);
+        formData.forEach((value, key) => {
+          console.log(`${key}: ${value}`);
+        });
       }
     </script>
   </body>
+  </html>
+</body>
 </html>
 ```
 
