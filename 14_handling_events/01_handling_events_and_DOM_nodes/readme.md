@@ -117,22 +117,57 @@ DOM nodes (like buttons or divs) are often the **context** in which an event occ
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Change Button</title>
+  <title>Realistic 3D Buttons</title>
+  <style>
+    /* Base button style */
+    #colorButton {
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0px 10px 0px #333, 0px 4px 15px rgba(0, 0, 0, 0.3);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      transition: all 0.5s ease-in-out; /* Smooth transition for all properties */
+    }
+
+    /* Red button style */
+    .red-button {
+      background: linear-gradient(to bottom, #ff6b6b, #c0392b);
+      box-shadow: 0px 10px 0px #7b0000, 0px 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Blue button style */
+    .blue-button {
+      background: linear-gradient(to bottom, #5dade2, #2874a6);
+      box-shadow: 0px 10px 0px #154360, 0px 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Hover effect */
+    #colorButton:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Pressed effect */
+    #colorButton:active {
+      box-shadow: 0px 6px 0px #333, 0px 2px 10px rgba(0, 0, 0, 0.3);
+      transform: translateY(4px);
+    }
+  </style>
 </head>
 <body>
-  <button id="colorButton">Click to Change Color</button>
+  <button id="colorButton" class="red-button">Click to Change Color</button>
 
   <script>
     const button = document.querySelector("#colorButton");
-    let isRed = false;
 
+    // Toggle between red and blue classes
     button.addEventListener("click", () => {
-      if (isRed) {
-        button.style.backgroundColor = "blue";
-      } else {
-        button.style.backgroundColor = "red";
-      }
-      isRed = !isRed;  // Toggle between red and blue
+      button.classList.toggle("red-button");
+      button.classList.toggle("blue-button");
     });
   </script>
 </body>
