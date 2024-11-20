@@ -14,35 +14,92 @@ In this example, we'll create a progress bar that fills up as you scroll down th
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scroll Progress Bar</title>
+  <title>Professional Scroll Progress Bar</title>
   <style>
-    #progress {
-      border-bottom: 2px solid blue;
-      width: 0;
+    /* Progress bar container */
+    #progress-container {
       position: fixed;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 6px;
+      background-color: #f3f3f3;
+      z-index: 10;
+    }
+
+    /* Progress bar */
+    #progress-bar {
+      height: 100%;
+      width: 0;
+      background-color: #0b57d0; /* Progress bar color */
+      transition: width 0.25s ease-out;
+    }
+
+    /* Percentage text */
+    #progress-text {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #333;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 4px 8px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    /* Content for scrolling */
+    .content {
+      max-width: 800px;
+      margin: 50px auto;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .content h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-  <div id="progress"></div>
+  <!-- Progress Bar -->
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+  <div id="progress-text">0%</div>
+
+  <!-- Scrollable Content -->
+  <div class="content">
+    <h1>Scroll Progress Bar Example</h1>
+    <p>This is an example of a professional scroll progress bar with percentage feedback. Scroll down to see the progress bar and the percentage increase as you read through the content.</p>
+    <p>...</p>
+    <!-- Generate content dynamically -->
+    <script>
+      // Generate a large amount of placeholder text
+      document.write("<p>" + "This is a sample paragraph. ".repeat(200) + "</p>");
+    </script>
+  </div>
 
   <script>
-    // Create a long page content
-    document.body.appendChild(document.createTextNode(
-      "supercalifragilisticexpialidocious ".repeat(1000)
-    ));
-
-    let progressBar = document.querySelector("#progress");
+    // Get references to the progress bar and text elements
+    const progressBar = document.getElementById("progress-bar");
+    const progressText = document.getElementById("progress-text");
 
     // Listen for the scroll event
     window.addEventListener("scroll", () => {
-      let maxScroll = document.body.scrollHeight - window.innerHeight;  // Calculate the total scrollable height
-      let currentScroll = window.pageYOffset;  // Get the current scroll position
-      let scrollPercentage = (currentScroll / maxScroll) * 100;  // Calculate the scroll percentage
-      progressBar.style.width = `${scrollPercentage}%`;  // Adjust the width of the progress bar
+      // Calculate the total scrollable height
+      const scrollHeight = document.body.scrollHeight - window.innerHeight;
+      // Get the current scroll position
+      const scrollTop = window.pageYOffset;
+      // Calculate the scroll percentage
+      const scrollPercentage = Math.min((scrollTop / scrollHeight) * 100, 100);
+      // Update the progress bar width and text
+      progressBar.style.width = `${scrollPercentage}%`;
+      progressText.textContent = `${Math.round(scrollPercentage)}%`;
     });
   </script>
 
@@ -51,41 +108,32 @@ In this example, we'll create a progress bar that fills up as you scroll down th
 ```
 
 ### **Explanation**:
-1. **Creating Scrollable Content**:
-   - The line `document.body.appendChild(document.createTextNode("supercalifragilisticexpialidocious ".repeat(1000)))`:
-     - Creates a long string by repeating `"supercalifragilisticexpialidocious "` 1000 times.
-     - This long string is added to the body of the document, making the page scrollable.
+### Features:
+1. **Smooth Progress Bar**:
+   - Uses `transition: width 0.25s ease-out` for a smooth and professional animation.
 
-2. **Selecting the Progress Bar Element**:
-   - `let progressBar = document.querySelector("#progress");`:
-     - Selects the `<div>` element with the id `progress` and stores it in the variable `progressBar`.
-     - This is the element that visually represents the scroll progress bar.
+2. **Percentage Feedback**:
+   - A fixed percentage label (`#progress-text`) dynamically updates to show how much of the page has been scrolled.
 
-3. **Listening for Scroll Events**:
-   - `window.addEventListener("scroll", () => {...});`:
-     - Adds an event listener that listens for the **scroll** event.
-     - Whenever the user scrolls the page, the function inside the event listener is triggered.
+3. **Modern Design**:
+   - Styled with a clean, professional appearance, including rounded text background and subtle shadows.
 
-4. **Calculating Maximum Scrollable Height**:
-   - `let maxScroll = document.body.scrollHeight - window.innerHeight;`:
-     - `document.body.scrollHeight` gets the total height of the webpage.
-     - `window.innerHeight` gets the height of the visible part of the page (the viewport).
-     - The difference between these two values (`scrollHeight - innerHeight`) gives the **total scrollable height** of the page.
+4. **Dynamic Content**:
+   - The content is generated dynamically to simulate a long article.
 
-5. **Getting Current Scroll Position**:
-   - `let currentScroll = window.pageYOffset;`:
-     - `window.pageYOffset` gets the number of pixels the user has scrolled from the top of the page.
+---
 
-6. **Calculating Scroll Percentage**:
-   - `let scrollPercentage = (currentScroll / maxScroll) * 100;`:
-     - Divides the current scroll position (`currentScroll`) by the total scrollable height (`maxScroll`).
-     - Multiplies the result by 100 to get the scroll progress as a percentage.
-     - Example: If the user has scrolled halfway down the page, `scrollPercentage` will be `50%`.
+### How It Works:
+1. **Scroll Calculation**:
+   - The total scrollable height is calculated as `document.body.scrollHeight - window.innerHeight`.
+   - The scroll percentage is `(currentScroll / maxScroll) * 100`.
 
-7. **Updating the Progress Bar Width**:
-   - `progressBar.style.width = `${scrollPercentage}%`;`:
-     - Dynamically updates the width of the progress bar based on the scroll percentage.
-     - The progress bar will grow in width as the user scrolls further down the page.
+2. **Dynamic Updates**:
+   - The width of `#progress-bar` is updated based on the scroll percentage.
+   - The `#progress-text` element shows the percentage, rounded to the nearest integer.
+
+3. **Responsiveness**:
+   - Works on any screen size since it uses percentages for calculations.
 
 ## **Real-World Scroll Event Examples** 🌍
 
